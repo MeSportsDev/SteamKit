@@ -12,6 +12,7 @@ import com.amelic.steamprotobuf.generated.SteammessagesClientserver.CMsgClientPI
 import com.amelic.steamprotobuf.generated.SteammessagesClientserver.CMsgClientPICSProductInfoRequest.AppInfo;
 import com.amelic.steamprotobuf.generated.SteammessagesClientserver.CMsgClientPICSProductInfoRequest.PackageInfo;
 import com.amelic.steamprotobuf.generated.SteammessagesClientserver.CMsgClientPICSProductInfoResponse;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver2;
 import com.amelic.steamprotobuf.generated.SteammessagesClientserver2.CMsgClientCheckAppBetaPassword;
 import com.amelic.steamprotobuf.generated.SteammessagesClientserver2.CMsgClientCheckAppBetaPasswordResponse;
 import com.amelic.steamprotobuf.generated.SteammessagesClientserver2.CMsgClientGetCDNAuthToken;
@@ -30,6 +31,7 @@ import uk.co.thomasc.steamkit.steam3.handlers.ClientMsgHandler;
 import uk.co.thomasc.steamkit.steam3.handlers.steamapps.callbacks.AppOwnershipTicketCallback;
 import uk.co.thomasc.steamkit.steam3.handlers.steamapps.callbacks.CDNAuthTokenCallback;
 import uk.co.thomasc.steamkit.steam3.handlers.steamapps.callbacks.CheckAppBetaPasswordCallback;
+import uk.co.thomasc.steamkit.steam3.handlers.steamapps.callbacks.ClientPlayingSessionStateCallback;
 import uk.co.thomasc.steamkit.steam3.handlers.steamapps.callbacks.DepotKeyCallback;
 import uk.co.thomasc.steamkit.steam3.handlers.steamapps.callbacks.FreeLicenseCallback;
 import uk.co.thomasc.steamkit.steam3.handlers.steamapps.callbacks.GameConnectTokensCallback;
@@ -62,6 +64,8 @@ public class SteamApps extends ClientMsgHandler {
         dispatchMap.put(EMsg.ClientLicenseList, this::handleLicenseList);
         dispatchMap.put(EMsg.ClientRequestFreeLicenseResponse, this::handleFreeLicense);
         dispatchMap.put(EMsg.ClientGameConnectTokens, this::handleGameConnectTokens);
+        //dispatchMap.put(EMsg.ClientPlayingSessionState, this::handleClientPlayingSessionState);
+        dispatchMap.put(EMsg.ClientConcurrentSessionsBase, this::handleClientPlayingSessionState);
         dispatchMap.put(EMsg.ClientVACBanStatus, this::handleVACBanStatus);
         dispatchMap.put(EMsg.ClientGetAppOwnershipTicketResponse, this::handleAppOwnershipTicketResponse);
         dispatchMap.put(EMsg.ClientGetDepotDecryptionKeyResponse, this::handleDepotKeyResponse);
@@ -483,6 +487,13 @@ public class SteamApps extends ClientMsgHandler {
                 new ClientMsgProtobuf<>(CMsgClientGameConnectTokens.class, packetMsg);
 
         getClient().postCallback(new GameConnectTokensCallback(gcTokens.getBody()));
+    }
+
+    private void handleClientPlayingSessionState(IPacketMsg packetMsg) {
+        ClientMsgProtobuf<SteammessagesClientserver2.CMsgClientPlayingSessionState.Builder> gcTokens =
+                new ClientMsgProtobuf<>(SteammessagesClientserver2.CMsgClientPlayingSessionState.class, packetMsg);
+
+        getClient().postCallback(new ClientPlayingSessionStateCallback(gcTokens.getBody()));
     }
 
     private void handleLicenseList(IPacketMsg packetMsg) {

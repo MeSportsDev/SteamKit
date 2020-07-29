@@ -4,7 +4,7 @@
   <groupId>com.vitaxa</groupId>
   <artifactId>steamkit</artifactId>
   <name>SteamKit</name>
-  <version>0.4.0</version>
+  <version>0.4.3</version>
   <build>
     <plugins>
       <plugin>
@@ -144,4 +144,11 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+  <distributionManagement>
+    <repository>
+      <id>bintray-devmesports-devmesports</id>
+      <name>devmesports-devmesports</name>
+      <url>https://api.bintray.com/maven/devmesports/devmesports/SteamKit/;publish=1</url>
+    </repository>
+  </distributionManagement>
 </project>
