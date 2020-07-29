@@ -1,7 +1,7 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamfriends.types;
 
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientAMGetPersonaNameHistoryResponse;
-import uk.co.thomasc.steamkit.base.generated.enums.EResult;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver.CMsgClientAMGetPersonaNameHistoryResponse;
+import com.amelic.steamprotobuf.generated.enums.EResult;
 import uk.co.thomasc.steamkit.types.SteamID;
 
 import java.util.ArrayList;

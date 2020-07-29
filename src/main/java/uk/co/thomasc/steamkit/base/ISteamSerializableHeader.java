@@ -1,6 +1,6 @@
 package uk.co.thomasc.steamkit.base;
 
-import uk.co.thomasc.steamkit.base.generated.enums.EMsg;
+import com.amelic.steamprotobuf.generated.enums.EMsg;
 
 public interface ISteamSerializableHeader extends ISteamSerializable {
     void setEMsg(EMsg msg);

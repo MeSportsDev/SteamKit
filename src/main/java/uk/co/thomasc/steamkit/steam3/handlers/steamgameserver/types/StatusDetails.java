@@ -1,6 +1,6 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamgameserver.types;
 
-import uk.co.thomasc.steamkit.base.generated.enums.EServerFlags;
+import com.amelic.steamprotobuf.generated.enums.EServerFlags;
 
 import java.net.InetAddress;
 import java.util.EnumSet;

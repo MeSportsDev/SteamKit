@@ -1,7 +1,7 @@
 package uk.co.thomasc.steamkit.base;
 
-import uk.co.thomasc.steamkit.base.generated.enums.EMsg;
-import uk.co.thomasc.steamkit.base.generated.internal.ExtendedClientMsgHdr;
+import com.amelic.steamprotobuf.generated.enums.EMsg;
+import uk.co.thomasc.steamkit.base.internal.ExtendedClientMsgHdr;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;

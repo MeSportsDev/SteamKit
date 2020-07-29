@@ -1,9 +1,15 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamnotifications;
 
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver2.CMsgClientCommentNotifications;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver2.CMsgClientItemAnnouncements;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver2.CMsgClientOfflineMessageNotification;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver2.CMsgClientRequestCommentNotifications;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver2.CMsgClientRequestItemAnnouncements;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver2.CMsgClientRequestOfflineMessageCount;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver2.CMsgClientUserNotifications;
+import com.amelic.steamprotobuf.generated.enums.EMsg;
 import uk.co.thomasc.steamkit.base.ClientMsgProtobuf;
 import uk.co.thomasc.steamkit.base.IPacketMsg;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.*;
-import uk.co.thomasc.steamkit.base.generated.enums.EMsg;
 import uk.co.thomasc.steamkit.steam3.handlers.ClientMsgHandler;
 import uk.co.thomasc.steamkit.steam3.handlers.steamnotifications.callback.CommentNotificationsCallback;
 import uk.co.thomasc.steamkit.steam3.handlers.steamnotifications.callback.ItemAnnouncementsCallback;

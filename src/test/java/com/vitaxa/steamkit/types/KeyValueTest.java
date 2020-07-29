@@ -1,13 +1,13 @@
 package com.vitaxa.steamkit.types;
 
+import com.amelic.steamprotobuf.generated.enums.EChatPermission;
+import com.amelic.steamprotobuf.generated.enums.EResult;
 import com.vitaxa.steamkit.TestBase;
 import org.apache.commons.codec.DecoderException;
 import org.apache.commons.codec.binary.Hex;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
-import uk.co.thomasc.steamkit.base.generated.enums.EChatPermission;
-import uk.co.thomasc.steamkit.base.generated.enums.EResult;
 import uk.co.thomasc.steamkit.types.KeyValue;
 import uk.co.thomasc.steamkit.util.stream.MemoryStream;
 import uk.co.thomasc.steamkit.util.stream.SeekOrigin;
@@ -20,7 +20,11 @@ import java.nio.file.Paths;
 import java.util.EnumSet;
 import java.util.UUID;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertTrue;
 
 public class KeyValueTest extends TestBase {
 

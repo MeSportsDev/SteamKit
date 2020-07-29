@@ -1,6 +1,6 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamuserstats;
 
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientLBSGetLBEntriesResponse;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver.CMsgClientLBSGetLBEntriesResponse;
 import uk.co.thomasc.steamkit.types.SteamID;
 import uk.co.thomasc.steamkit.types.UGCHandle;
 import uk.co.thomasc.steamkit.util.stream.BinaryReader;

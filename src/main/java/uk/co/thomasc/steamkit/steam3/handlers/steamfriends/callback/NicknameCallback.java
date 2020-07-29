@@ -1,7 +1,7 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamfriends.callback;
 
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverFriends;
-import uk.co.thomasc.steamkit.base.generated.enums.EResult;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserverFriends;
+import com.amelic.steamprotobuf.generated.enums.EResult;
 import uk.co.thomasc.steamkit.steam3.handlers.steamfriends.SteamFriends;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
 import uk.co.thomasc.steamkit.types.JobID;

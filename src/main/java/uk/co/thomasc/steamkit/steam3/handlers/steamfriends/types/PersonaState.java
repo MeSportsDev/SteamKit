@@ -1,9 +1,9 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamfriends.types;
 
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverFriends.CMsgClientPersonaState;
-import uk.co.thomasc.steamkit.base.generated.enums.EClientPersonaStateFlag;
-import uk.co.thomasc.steamkit.base.generated.enums.EPersonaState;
-import uk.co.thomasc.steamkit.base.generated.enums.EPersonaStateFlag;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserverFriends.CMsgClientPersonaState;
+import com.amelic.steamprotobuf.generated.enums.EClientPersonaStateFlag;
+import com.amelic.steamprotobuf.generated.enums.EPersonaState;
+import com.amelic.steamprotobuf.generated.enums.EPersonaStateFlag;
 import uk.co.thomasc.steamkit.types.GameID;
 import uk.co.thomasc.steamkit.types.SteamID;
 import uk.co.thomasc.steamkit.util.util.NetHelpers;

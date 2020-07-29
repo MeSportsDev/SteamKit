@@ -1,6 +1,6 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamfriends.types;
 
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverFriends.CMsgClientPlayerNicknameList;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserverFriends.CMsgClientPlayerNicknameList;
 import uk.co.thomasc.steamkit.types.SteamID;
 
 /**

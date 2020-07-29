@@ -1,8 +1,8 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamuser.callbacks;
 
-import uk.co.thomasc.steamkit.base.generated.enums.EAccountFlags;
-import uk.co.thomasc.steamkit.base.generated.enums.EResult;
-import uk.co.thomasc.steamkit.base.generated.internal.MsgClientLogOnResponse;
+import com.amelic.steamprotobuf.generated.enums.EAccountFlags;
+import com.amelic.steamprotobuf.generated.enums.EResult;
+import uk.co.thomasc.steamkit.base.internal.MsgClientLogOnResponse;
 import uk.co.thomasc.steamkit.steam3.handlers.steamuser.SteamUser;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
 import uk.co.thomasc.steamkit.types.SteamID;
@@ -12,7 +12,7 @@ import java.net.InetAddress;
 import java.util.Date;
 import java.util.EnumSet;
 
-import static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogonResponse;
+import static com.amelic.steamprotobuf.generated.SteammessagesClientserverLogin.CMsgClientLogonResponse;
 
 /**
  * This callback is returned in response to an attempt to log on to the Steam3 network through {@link SteamUser}.

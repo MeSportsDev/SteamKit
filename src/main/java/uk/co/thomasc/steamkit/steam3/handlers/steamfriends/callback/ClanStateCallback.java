@@ -1,7 +1,7 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamfriends.callback;
 
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientClanState;
-import uk.co.thomasc.steamkit.base.generated.enums.EAccountFlags;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver.CMsgClientClanState;
+import com.amelic.steamprotobuf.generated.enums.EAccountFlags;
 import uk.co.thomasc.steamkit.steam3.handlers.steamfriends.types.Event;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
 import uk.co.thomasc.steamkit.types.SteamID;

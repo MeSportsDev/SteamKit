@@ -1,8 +1,8 @@
 package uk.co.thomasc.steamkit.networking.steam3;
 
-import uk.co.thomasc.steamkit.base.generated.enums.EUdpPacketType;
-import uk.co.thomasc.steamkit.base.generated.internal.ChallengeData;
-import uk.co.thomasc.steamkit.base.generated.internal.ConnectData;
+import com.amelic.steamprotobuf.generated.enums.EUdpPacketType;
+import uk.co.thomasc.steamkit.base.internal.ChallengeData;
+import uk.co.thomasc.steamkit.base.internal.ConnectData;
 import uk.co.thomasc.steamkit.util.cSharp.events.EventArgs;
 import uk.co.thomasc.steamkit.util.logging.DebugLog;
 import uk.co.thomasc.steamkit.util.stream.MemoryStream;
@@ -10,8 +10,17 @@ import uk.co.thomasc.steamkit.util.stream.SeekOrigin;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.net.*;
-import java.util.*;
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
+import java.net.InetAddress;
+import java.net.InetSocketAddress;
+import java.net.SocketException;
+import java.net.SocketTimeoutException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
 
 public class UdpConnection extends Connection {

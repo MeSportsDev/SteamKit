@@ -1,9 +1,14 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamcloud;
 
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver.CMsgClientUFSGetSingleFileInfo;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver.CMsgClientUFSGetSingleFileInfoResponse;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver.CMsgClientUFSGetUGCDetails;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver.CMsgClientUFSGetUGCDetailsResponse;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver.CMsgClientUFSShareFile;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver.CMsgClientUFSShareFileResponse;
+import com.amelic.steamprotobuf.generated.enums.EMsg;
 import uk.co.thomasc.steamkit.base.ClientMsgProtobuf;
 import uk.co.thomasc.steamkit.base.IPacketMsg;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.*;
-import uk.co.thomasc.steamkit.base.generated.enums.EMsg;
 import uk.co.thomasc.steamkit.steam3.handlers.ClientMsgHandler;
 import uk.co.thomasc.steamkit.steam3.handlers.steamcloud.callback.ShareFileCallback;
 import uk.co.thomasc.steamkit.steam3.handlers.steamcloud.callback.SingleFileInfoCallback;

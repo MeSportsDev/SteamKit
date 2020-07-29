@@ -1,10 +1,10 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamunifiedmessages;
 
+import com.amelic.steamprotobuf.generated.enums.EMsg;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.GeneratedMessageV3;
 import uk.co.thomasc.steamkit.base.ClientMsgProtobuf;
 import uk.co.thomasc.steamkit.base.IPacketMsg;
-import uk.co.thomasc.steamkit.base.generated.enums.EMsg;
 import uk.co.thomasc.steamkit.steam3.handlers.ClientMsgHandler;
 import uk.co.thomasc.steamkit.steam3.handlers.steamunifiedmessages.callbacks.ServiceMethodResponseCallback;
 import uk.co.thomasc.steamkit.types.AsyncJob;
@@ -17,8 +17,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Consumer;
 
-import static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgClientServiceMethod;
-import static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgClientServiceMethodResponse;
+import static com.amelic.steamprotobuf.generated.SteammessagesClientserver2.CMsgClientServiceMethod;
+import static com.amelic.steamprotobuf.generated.SteammessagesClientserver2.CMsgClientServiceMethodResponse;
 
 public class SteamUnifiedMessages extends ClientMsgHandler {
 

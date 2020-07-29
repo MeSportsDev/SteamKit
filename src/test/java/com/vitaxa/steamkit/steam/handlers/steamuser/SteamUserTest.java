@@ -1,5 +1,14 @@
 package com.vitaxa.steamkit.steam.handlers.steamuser;
 
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver2.CMsgClientUpdateMachineAuthResponse;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserverLogin;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserverLogin.CMsgClientLogOff;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserverLogin.CMsgClientLogon;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce;
+import com.amelic.steamprotobuf.generated.enums.EAccountType;
+import com.amelic.steamprotobuf.generated.enums.ECurrencyCode;
+import com.amelic.steamprotobuf.generated.enums.EMsg;
+import com.amelic.steamprotobuf.generated.enums.EResult;
 import com.vitaxa.steamkit.steam.handlers.HandlerTestBase;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -8,17 +17,16 @@ import org.mockito.junit.MockitoJUnitRunner;
 import uk.co.thomasc.steamkit.base.ClientMsgProtobuf;
 import uk.co.thomasc.steamkit.base.IClientMsg;
 import uk.co.thomasc.steamkit.base.IPacketMsg;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgClientUpdateMachineAuthResponse;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogOff;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogon;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce;
-import uk.co.thomasc.steamkit.base.generated.enums.EAccountType;
-import uk.co.thomasc.steamkit.base.generated.enums.ECurrencyCode;
-import uk.co.thomasc.steamkit.base.generated.enums.EMsg;
-import uk.co.thomasc.steamkit.base.generated.enums.EResult;
 import uk.co.thomasc.steamkit.steam3.handlers.steamuser.SteamUser;
-import uk.co.thomasc.steamkit.steam3.handlers.steamuser.callbacks.*;
+import uk.co.thomasc.steamkit.steam3.handlers.steamuser.callbacks.AccountInfoCallback;
+import uk.co.thomasc.steamkit.steam3.handlers.steamuser.callbacks.LoggedOffCallback;
+import uk.co.thomasc.steamkit.steam3.handlers.steamuser.callbacks.LoggedOnCallback;
+import uk.co.thomasc.steamkit.steam3.handlers.steamuser.callbacks.LoginKeyCallback;
+import uk.co.thomasc.steamkit.steam3.handlers.steamuser.callbacks.MarketingMessageCallback;
+import uk.co.thomasc.steamkit.steam3.handlers.steamuser.callbacks.SessionTokenCallback;
+import uk.co.thomasc.steamkit.steam3.handlers.steamuser.callbacks.UpdateMachineAuthCallback;
+import uk.co.thomasc.steamkit.steam3.handlers.steamuser.callbacks.WalletInfoCallback;
+import uk.co.thomasc.steamkit.steam3.handlers.steamuser.callbacks.WebAPIUserNonceCallback;
 import uk.co.thomasc.steamkit.steam3.handlers.steamuser.types.LogOnDetails;
 import uk.co.thomasc.steamkit.steam3.handlers.steamuser.types.MachineAuthDetails;
 import uk.co.thomasc.steamkit.steam3.handlers.steamuser.types.OTPDetails;
@@ -28,8 +36,13 @@ import uk.co.thomasc.steamkit.types.SteamID;
 
 import java.util.Date;
 
-import static org.junit.Assert.*;
-import static org.mockito.Mockito.*;
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.mockito.Mockito.reset;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.Silent.class)
 public class SteamUserTest extends HandlerTestBase<SteamUser> {

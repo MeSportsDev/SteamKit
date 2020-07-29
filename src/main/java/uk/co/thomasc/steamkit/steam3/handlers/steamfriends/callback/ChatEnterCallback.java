@@ -1,8 +1,8 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamfriends.callback;
 
-import uk.co.thomasc.steamkit.base.generated.enums.EChatRoomEnterResponse;
-import uk.co.thomasc.steamkit.base.generated.enums.EChatRoomType;
-import uk.co.thomasc.steamkit.base.generated.internal.MsgClientChatEnter;
+import com.amelic.steamprotobuf.generated.enums.EChatRoomEnterResponse;
+import com.amelic.steamprotobuf.generated.enums.EChatRoomType;
+import uk.co.thomasc.steamkit.base.internal.MsgClientChatEnter;
 import uk.co.thomasc.steamkit.steam3.handlers.steamfriends.types.ChatMemberInfo;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
 import uk.co.thomasc.steamkit.types.SteamID;

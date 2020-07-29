@@ -1,7 +1,7 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamunifiedmessages.callbacks;
 
+import com.amelic.steamprotobuf.generated.enums.EResult;
 import com.google.protobuf.GeneratedMessageV3;
-import uk.co.thomasc.steamkit.base.generated.enums.EResult;
 import uk.co.thomasc.steamkit.steam3.handlers.steamunifiedmessages.UnifiedProtobufMethod;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
 import uk.co.thomasc.steamkit.types.JobID;
@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-import static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgClientServiceMethodResponse;
+import static com.amelic.steamprotobuf.generated.SteammessagesClientserver2.CMsgClientServiceMethodResponse;
 
 public class ServiceMethodResponseCallback<R extends GeneratedMessageV3> extends CallbackMsg {
 

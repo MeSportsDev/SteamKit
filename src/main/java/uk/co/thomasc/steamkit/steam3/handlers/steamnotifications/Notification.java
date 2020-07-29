@@ -1,6 +1,6 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamnotifications;
 
-import static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgClientUserNotifications;
+import static com.amelic.steamprotobuf.generated.SteammessagesClientserver2.CMsgClientUserNotifications;
 
 /**
  * Represents a notification.

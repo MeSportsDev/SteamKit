@@ -1,5 +1,7 @@
 package com.vitaxa.steamkit.steam.handlers;
 
+import com.amelic.steamprotobuf.generated.enums.EMsg;
+import com.amelic.steamprotobuf.generated.enums.EUniverse;
 import com.vitaxa.steamkit.TestBase;
 import com.vitaxa.steamkit.TestPackets;
 import org.junit.Before;
@@ -7,8 +9,6 @@ import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import uk.co.thomasc.steamkit.base.IClientMsg;
 import uk.co.thomasc.steamkit.base.IPacketMsg;
-import uk.co.thomasc.steamkit.base.generated.enums.EMsg;
-import uk.co.thomasc.steamkit.base.generated.enums.EUniverse;
 import uk.co.thomasc.steamkit.steam3.CMClient;
 import uk.co.thomasc.steamkit.steam3.handlers.ClientMsgHandler;
 import uk.co.thomasc.steamkit.steam3.steamclient.SteamClient;
@@ -20,7 +20,9 @@ import uk.co.thomasc.steamkit.types.SteamID;
 import java.net.InetAddress;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.atLeast;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 public abstract class HandlerTestBase<T extends ClientMsgHandler> extends TestBase {
 

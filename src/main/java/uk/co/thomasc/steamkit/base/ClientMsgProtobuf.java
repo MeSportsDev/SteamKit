@@ -1,9 +1,9 @@
 package uk.co.thomasc.steamkit.base;
 
+import com.amelic.steamprotobuf.generated.enums.EMsg;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.GeneratedMessageV3;
-import uk.co.thomasc.steamkit.base.generated.enums.EMsg;
-import uk.co.thomasc.steamkit.base.generated.internal.MsgHdrProtoBuf;
+import uk.co.thomasc.steamkit.base.internal.MsgHdrProtoBuf;
 import uk.co.thomasc.steamkit.util.logging.DebugLog;
 import uk.co.thomasc.steamkit.util.stream.BinaryReader;
 import uk.co.thomasc.steamkit.util.stream.SeekOrigin;

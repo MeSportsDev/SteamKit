@@ -5,8 +5,8 @@ import uk.co.thomasc.steamkit.types.JobID;
 /**
  * A callback message
  */
-public interface ICallbackMsg {
+public interface ICallbackMsg<C extends ICallbackMsg<C>> {
     JobID getJobID();
 
-    void setJobID(JobID jobID);
+    C setJobID(JobID jobID);
 }

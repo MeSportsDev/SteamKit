@@ -1,6 +1,6 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamfriends.types;
 
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientClanState;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver.CMsgClientClanState;
 import uk.co.thomasc.steamkit.types.GameID;
 import uk.co.thomasc.steamkit.types.GlobalID;
 

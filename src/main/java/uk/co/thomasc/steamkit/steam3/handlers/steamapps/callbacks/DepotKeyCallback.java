@@ -1,7 +1,7 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamapps.callbacks;
 
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgClientGetDepotDecryptionKeyResponse;
-import uk.co.thomasc.steamkit.base.generated.enums.EResult;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver2.CMsgClientGetDepotDecryptionKeyResponse;
+import com.amelic.steamprotobuf.generated.enums.EResult;
 import uk.co.thomasc.steamkit.steam3.handlers.steamapps.SteamApps;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
 import uk.co.thomasc.steamkit.types.JobID;

@@ -1,6 +1,6 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamuser.callbacks;
 
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientSessionToken;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver.CMsgClientSessionToken;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
 
 /**

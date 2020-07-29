@@ -1,6 +1,6 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamapps.types;
 
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientPICSChangesSinceResponse;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver.CMsgClientPICSChangesSinceResponse;
 
 /**
  * Holds the change data for a single app or package

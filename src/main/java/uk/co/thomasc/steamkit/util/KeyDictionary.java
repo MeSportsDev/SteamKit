@@ -1,6 +1,6 @@
 package uk.co.thomasc.steamkit.util;
 
-import uk.co.thomasc.steamkit.base.generated.enums.EUniverse;
+import com.amelic.steamprotobuf.generated.enums.EUniverse;
 
 import java.util.Collections;
 import java.util.HashMap;

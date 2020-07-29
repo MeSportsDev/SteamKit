@@ -1,13 +1,13 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamtrading;
 
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver2.CMsgTrading_CancelTradeRequest;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver2.CMsgTrading_InitiateTradeRequest;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver2.CMsgTrading_InitiateTradeResponse;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver2.CMsgTrading_StartSession;
+import com.amelic.steamprotobuf.generated.enums.EEconTradeResponse;
+import com.amelic.steamprotobuf.generated.enums.EMsg;
 import uk.co.thomasc.steamkit.base.ClientMsgProtobuf;
 import uk.co.thomasc.steamkit.base.IPacketMsg;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgTrading_CancelTradeRequest;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgTrading_InitiateTradeRequest;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgTrading_InitiateTradeResponse;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgTrading_StartSession;
-import uk.co.thomasc.steamkit.base.generated.enums.EEconTradeResponse;
-import uk.co.thomasc.steamkit.base.generated.enums.EMsg;
 import uk.co.thomasc.steamkit.steam3.handlers.ClientMsgHandler;
 import uk.co.thomasc.steamkit.steam3.handlers.steamtrading.callbacks.SessionStartCallback;
 import uk.co.thomasc.steamkit.steam3.handlers.steamtrading.callbacks.TradeProposedCallback;

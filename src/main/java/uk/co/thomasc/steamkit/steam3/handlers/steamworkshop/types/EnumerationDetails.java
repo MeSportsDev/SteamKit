@@ -1,6 +1,6 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamworkshop.types;
 
-import uk.co.thomasc.steamkit.base.generated.enums.EWorkshopEnumerationType;
+import com.amelic.steamprotobuf.generated.enums.EWorkshopEnumerationType;
 
 import java.util.ArrayList;
 import java.util.List;

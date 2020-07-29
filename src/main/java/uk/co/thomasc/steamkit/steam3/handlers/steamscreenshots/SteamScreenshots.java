@@ -1,10 +1,10 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamscreenshots;
 
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver2;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver2.CMsgClientUCMAddScreenshotResponse;
+import com.amelic.steamprotobuf.generated.enums.EMsg;
 import uk.co.thomasc.steamkit.base.ClientMsgProtobuf;
 import uk.co.thomasc.steamkit.base.IPacketMsg;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgClientUCMAddScreenshotResponse;
-import uk.co.thomasc.steamkit.base.generated.enums.EMsg;
 import uk.co.thomasc.steamkit.steam3.handlers.ClientMsgHandler;
 import uk.co.thomasc.steamkit.steam3.handlers.steamscreenshots.callback.ScreenshotAddedCallback;
 import uk.co.thomasc.steamkit.types.AsyncJob;

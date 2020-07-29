@@ -1,7 +1,7 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamscreenshots.callback;
 
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2;
-import uk.co.thomasc.steamkit.base.generated.enums.EResult;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver2;
+import com.amelic.steamprotobuf.generated.enums.EResult;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
 import uk.co.thomasc.steamkit.types.JobID;
 import uk.co.thomasc.steamkit.types.UGCHandle;

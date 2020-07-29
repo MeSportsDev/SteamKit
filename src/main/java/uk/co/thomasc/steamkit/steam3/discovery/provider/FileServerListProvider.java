@@ -1,12 +1,16 @@
 package uk.co.thomasc.steamkit.steam3.discovery.provider;
 
-import uk.co.thomasc.steamkit.base.generated.discovery.BasicServerListProtos;
-import uk.co.thomasc.steamkit.base.generated.discovery.BasicServerListProtos.BasicServerList;
+import com.amelic.steamprotobuf.generated.discovery.BasicServerListProtos;
+import com.amelic.steamprotobuf.generated.discovery.BasicServerListProtos.BasicServerList;
 import uk.co.thomasc.steamkit.networking.steam3.ProtocolType;
 import uk.co.thomasc.steamkit.steam3.discovery.ServerRecord;
 import uk.co.thomasc.steamkit.util.logging.DebugLog;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 

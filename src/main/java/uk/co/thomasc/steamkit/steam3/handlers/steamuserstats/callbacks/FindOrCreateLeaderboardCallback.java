@@ -1,9 +1,9 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamuserstats.callbacks;
 
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientLBSFindOrCreateLBResponse;
-import uk.co.thomasc.steamkit.base.generated.enums.ELeaderboardDisplayType;
-import uk.co.thomasc.steamkit.base.generated.enums.ELeaderboardSortMethod;
-import uk.co.thomasc.steamkit.base.generated.enums.EResult;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver.CMsgClientLBSFindOrCreateLBResponse;
+import com.amelic.steamprotobuf.generated.enums.ELeaderboardDisplayType;
+import com.amelic.steamprotobuf.generated.enums.ELeaderboardSortMethod;
+import com.amelic.steamprotobuf.generated.enums.EResult;
 import uk.co.thomasc.steamkit.steam3.handlers.steamuserstats.SteamUserStats;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
 import uk.co.thomasc.steamkit.types.JobID;

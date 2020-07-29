@@ -1,7 +1,7 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamuser.callbacks;
 
-import uk.co.thomasc.steamkit.base.generated.enums.EMarketingMessageFlags;
-import uk.co.thomasc.steamkit.base.generated.internal.MsgClientMarketingMessageUpdate2;
+import com.amelic.steamprotobuf.generated.enums.EMarketingMessageFlags;
+import uk.co.thomasc.steamkit.base.internal.MsgClientMarketingMessageUpdate2;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
 import uk.co.thomasc.steamkit.types.GlobalID;
 import uk.co.thomasc.steamkit.util.logging.DebugLog;
@@ -10,7 +10,12 @@ import uk.co.thomasc.steamkit.util.stream.BinaryReader;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.nio.charset.Charset;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Date;
+import java.util.EnumSet;
+import java.util.List;
 
 /**
  * This callback is fired when the client receives a marketing message update.

@@ -1,7 +1,7 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamuser.callbacks;
 
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientAccountInfo;
-import uk.co.thomasc.steamkit.base.generated.enums.EAccountFlags;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserverLogin.CMsgClientAccountInfo;
+import com.amelic.steamprotobuf.generated.enums.EAccountFlags;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
 
 import java.util.EnumSet;

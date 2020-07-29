@@ -1,5 +1,20 @@
 package com.vitaxa.steamkit.steam.handlers.steamfriends;
 
+import com.amelic.steamprotobuf.generated.SteammessagesClientserverFriends.CMsgClientAddFriend;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserverFriends.CMsgClientChangeStatus;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserverFriends.CMsgClientFriendMsg;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserverFriends.CMsgClientFriendProfileInfo;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserverFriends.CMsgClientRemoveFriend;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserverFriends.CMsgClientRequestFriendData;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserverFriends.CMsgClientSetPlayerNickname;
+import com.amelic.steamprotobuf.generated.enums.EAccountType;
+import com.amelic.steamprotobuf.generated.enums.EChatAction;
+import com.amelic.steamprotobuf.generated.enums.EChatEntryType;
+import com.amelic.steamprotobuf.generated.enums.EChatInfoType;
+import com.amelic.steamprotobuf.generated.enums.EClientPersonaStateFlag;
+import com.amelic.steamprotobuf.generated.enums.EMsg;
+import com.amelic.steamprotobuf.generated.enums.EPersonaState;
+import com.amelic.steamprotobuf.generated.enums.EResult;
 import com.vitaxa.steamkit.steam.handlers.HandlerTestBase;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,11 +22,31 @@ import org.mockito.junit.MockitoJUnitRunner;
 import uk.co.thomasc.steamkit.base.ClientMsg;
 import uk.co.thomasc.steamkit.base.ClientMsgProtobuf;
 import uk.co.thomasc.steamkit.base.IPacketMsg;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverFriends.*;
-import uk.co.thomasc.steamkit.base.generated.enums.*;
-import uk.co.thomasc.steamkit.base.generated.internal.*;
+import uk.co.thomasc.steamkit.base.internal.MsgClientChatAction;
+import uk.co.thomasc.steamkit.base.internal.MsgClientChatMemberInfo;
+import uk.co.thomasc.steamkit.base.internal.MsgClientChatMsg;
+import uk.co.thomasc.steamkit.base.internal.MsgClientJoinChat;
+import uk.co.thomasc.steamkit.base.internal.MsgClientSetIgnoreFriend;
 import uk.co.thomasc.steamkit.steam3.handlers.steamfriends.SteamFriends;
-import uk.co.thomasc.steamkit.steam3.handlers.steamfriends.callback.*;
+import uk.co.thomasc.steamkit.steam3.handlers.steamfriends.callback.AliasHistoryCallback;
+import uk.co.thomasc.steamkit.steam3.handlers.steamfriends.callback.ChatActionResultCallback;
+import uk.co.thomasc.steamkit.steam3.handlers.steamfriends.callback.ChatEnterCallback;
+import uk.co.thomasc.steamkit.steam3.handlers.steamfriends.callback.ChatInviteCallback;
+import uk.co.thomasc.steamkit.steam3.handlers.steamfriends.callback.ChatMemberInfoCallback;
+import uk.co.thomasc.steamkit.steam3.handlers.steamfriends.callback.ChatMsgCallback;
+import uk.co.thomasc.steamkit.steam3.handlers.steamfriends.callback.ChatRoomInfoCallback;
+import uk.co.thomasc.steamkit.steam3.handlers.steamfriends.callback.ClanStateCallback;
+import uk.co.thomasc.steamkit.steam3.handlers.steamfriends.callback.FriendAddedCallback;
+import uk.co.thomasc.steamkit.steam3.handlers.steamfriends.callback.FriendMsgCallback;
+import uk.co.thomasc.steamkit.steam3.handlers.steamfriends.callback.FriendMsgEchoCallback;
+import uk.co.thomasc.steamkit.steam3.handlers.steamfriends.callback.FriendMsgHistoryCallback;
+import uk.co.thomasc.steamkit.steam3.handlers.steamfriends.callback.FriendsListCallback;
+import uk.co.thomasc.steamkit.steam3.handlers.steamfriends.callback.IgnoreFriendCallback;
+import uk.co.thomasc.steamkit.steam3.handlers.steamfriends.callback.NicknameCallback;
+import uk.co.thomasc.steamkit.steam3.handlers.steamfriends.callback.NicknameListCallback;
+import uk.co.thomasc.steamkit.steam3.handlers.steamfriends.callback.PersonaChangeCallback;
+import uk.co.thomasc.steamkit.steam3.handlers.steamfriends.callback.PersonaStatesCallback;
+import uk.co.thomasc.steamkit.steam3.handlers.steamfriends.callback.ProfileInfoCallback;
 import uk.co.thomasc.steamkit.types.SteamID;
 import uk.co.thomasc.steamkit.util.stream.SeekOrigin;
 
@@ -19,11 +54,13 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.EnumSet;
 
-import static org.junit.Assert.*;
-import static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientAMGetPersonaNameHistory;
-import static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientChatInvite;
-import static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgClientChatGetFriendMessageHistory;
-import static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgClientChatGetFriendMessageHistoryForOfflineMessages;
+import static com.amelic.steamprotobuf.generated.SteammessagesClientserver.CMsgClientAMGetPersonaNameHistory;
+import static com.amelic.steamprotobuf.generated.SteammessagesClientserver.CMsgClientChatInvite;
+import static com.amelic.steamprotobuf.generated.SteammessagesClientserver2.CMsgClientChatGetFriendMessageHistory;
+import static com.amelic.steamprotobuf.generated.SteammessagesClientserver2.CMsgClientChatGetFriendMessageHistoryForOfflineMessages;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
 
 @RunWith(MockitoJUnitRunner.Silent.class)
 public class SteamFriendsTest extends HandlerTestBase<SteamFriends> {

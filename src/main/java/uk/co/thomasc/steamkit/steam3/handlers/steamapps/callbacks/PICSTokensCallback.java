@@ -1,6 +1,6 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamapps.callbacks;
 
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientPICSAccessTokenResponse;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver.CMsgClientPICSAccessTokenResponse;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
 import uk.co.thomasc.steamkit.types.JobID;
 

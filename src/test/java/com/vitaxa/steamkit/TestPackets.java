@@ -1,21 +1,46 @@
 package com.vitaxa.steamkit;
 
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver2;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver2.CMsgClientCheckAppBetaPasswordResponse;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver2.CMsgClientRequestFreeLicenseResponse;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserverLogin.CMsgClientAccountInfo;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserverLogin.CMsgClientLoggedOff;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserverLogin.CMsgClientLogonResponse;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKey;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse;
+import com.amelic.steamprotobuf.generated.enums.EChatAction;
+import com.amelic.steamprotobuf.generated.enums.EChatActionResult;
+import com.amelic.steamprotobuf.generated.enums.EChatInfoType;
+import com.amelic.steamprotobuf.generated.enums.EChatRoomEnterResponse;
+import com.amelic.steamprotobuf.generated.enums.EChatRoomType;
+import com.amelic.steamprotobuf.generated.enums.EMsg;
+import com.amelic.steamprotobuf.generated.enums.EResult;
 import com.google.protobuf.ByteString;
 import uk.co.thomasc.steamkit.base.ClientMsg;
 import uk.co.thomasc.steamkit.base.ClientMsgProtobuf;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgClientCheckAppBetaPasswordResponse;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgClientRequestFreeLicenseResponse;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.*;
-import uk.co.thomasc.steamkit.base.generated.enums.*;
-import uk.co.thomasc.steamkit.base.generated.internal.*;
+import uk.co.thomasc.steamkit.base.internal.MsgClientChatActionResult;
+import uk.co.thomasc.steamkit.base.internal.MsgClientChatEnter;
+import uk.co.thomasc.steamkit.base.internal.MsgClientChatMemberInfo;
+import uk.co.thomasc.steamkit.base.internal.MsgClientChatMsg;
+import uk.co.thomasc.steamkit.base.internal.MsgClientChatRoomInfo;
+import uk.co.thomasc.steamkit.base.internal.MsgClientLogOnResponse;
+import uk.co.thomasc.steamkit.base.internal.MsgClientLoggedOff;
+import uk.co.thomasc.steamkit.base.internal.MsgClientSetIgnoreFriendResponse;
 import uk.co.thomasc.steamkit.types.SteamID;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 
-import static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.*;
-import static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverFriends.*;
+import static com.amelic.steamprotobuf.generated.SteammessagesClientserver.CMsgClientChatInvite;
+import static com.amelic.steamprotobuf.generated.SteammessagesClientserver.CMsgClientGameConnectTokens;
+import static com.amelic.steamprotobuf.generated.SteammessagesClientserver.CMsgClientGetAppOwnershipTicketResponse;
+import static com.amelic.steamprotobuf.generated.SteammessagesClientserver.CMsgClientSessionToken;
+import static com.amelic.steamprotobuf.generated.SteammessagesClientserverFriends.CMsgClientAddFriendResponse;
+import static com.amelic.steamprotobuf.generated.SteammessagesClientserverFriends.CMsgClientFriendMsgIncoming;
+import static com.amelic.steamprotobuf.generated.SteammessagesClientserverFriends.CMsgClientFriendProfileInfoResponse;
+import static com.amelic.steamprotobuf.generated.SteammessagesClientserverFriends.CMsgClientPlayerNicknameList;
+import static com.amelic.steamprotobuf.generated.SteammessagesClientserverFriends.CMsgClientSetPlayerNicknameResponse;
+import static com.amelic.steamprotobuf.generated.SteammessagesClientserverFriends.CMsgPersonaChangeResponse;
 
 public abstract class TestPackets {
 
@@ -44,7 +69,6 @@ public abstract class TestPackets {
             case ClientFriendMsgEchoToSender:
                 return clientFriendMsgEchoToSender();
             case ClientFSGetFriendMessageHistoryResponse:
-                return clientFSGetFriendMessageHistoryResponse();
             case ClientChatGetFriendMessageHistoryResponse:
                 return clientFSGetFriendMessageHistoryResponse();
             case ClientFriendsList:

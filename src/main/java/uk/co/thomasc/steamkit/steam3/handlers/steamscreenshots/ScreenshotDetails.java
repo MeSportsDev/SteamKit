@@ -1,6 +1,6 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamscreenshots;
 
-import uk.co.thomasc.steamkit.base.generated.enums.EUCMFilePrivacyState;
+import com.amelic.steamprotobuf.generated.enums.EUCMFilePrivacyState;
 import uk.co.thomasc.steamkit.types.GameID;
 
 import java.util.Date;

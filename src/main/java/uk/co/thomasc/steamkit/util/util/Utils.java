@@ -1,6 +1,6 @@
 package uk.co.thomasc.steamkit.util.util;
 
-import uk.co.thomasc.steamkit.base.generated.enums.EOSType;
+import com.amelic.steamprotobuf.generated.enums.EOSType;
 
 import java.util.zip.CRC32;
 import java.util.zip.Checksum;

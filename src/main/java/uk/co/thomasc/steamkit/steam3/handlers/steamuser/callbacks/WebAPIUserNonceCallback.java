@@ -1,10 +1,10 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamuser.callbacks;
 
-import uk.co.thomasc.steamkit.base.generated.enums.EResult;
+import com.amelic.steamprotobuf.generated.enums.EResult;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
 import uk.co.thomasc.steamkit.types.JobID;
 
-import static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse;
+import static com.amelic.steamprotobuf.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse;
 
 /**
  * This callback is received when requesting a new WebAPI authentication user nonce.

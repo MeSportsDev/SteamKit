@@ -1,7 +1,7 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamfriends.types;
 
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverFriends.CMsgClientFriendsList;
-import uk.co.thomasc.steamkit.base.generated.enums.EFriendRelationship;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserverFriends.CMsgClientFriendsList;
+import com.amelic.steamprotobuf.generated.enums.EFriendRelationship;
 import uk.co.thomasc.steamkit.types.SteamID;
 
 /**

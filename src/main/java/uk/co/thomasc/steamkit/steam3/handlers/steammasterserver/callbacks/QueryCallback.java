@@ -1,6 +1,6 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steammasterserver.callbacks;
 
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgGMSClientServerQueryResponse;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver2.CMsgGMSClientServerQueryResponse;
 import uk.co.thomasc.steamkit.steam3.handlers.steammasterserver.SteamMasterServer;
 import uk.co.thomasc.steamkit.steam3.handlers.steammasterserver.types.QueryDetails;
 import uk.co.thomasc.steamkit.steam3.handlers.steammasterserver.types.Server;

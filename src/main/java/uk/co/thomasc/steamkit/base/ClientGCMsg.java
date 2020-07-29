@@ -1,6 +1,6 @@
 package uk.co.thomasc.steamkit.base;
 
-import uk.co.thomasc.steamkit.base.generated.internal.MsgGCHdr;
+import uk.co.thomasc.steamkit.base.internal.MsgGCHdr;
 import uk.co.thomasc.steamkit.types.JobID;
 import uk.co.thomasc.steamkit.util.logging.DebugLog;
 import uk.co.thomasc.steamkit.util.stream.MemoryStream;

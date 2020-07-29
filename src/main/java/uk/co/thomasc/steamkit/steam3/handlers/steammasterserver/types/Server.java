@@ -1,6 +1,6 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steammasterserver.types;
 
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgGMSClientServerQueryResponse;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver2.CMsgGMSClientServerQueryResponse;
 import uk.co.thomasc.steamkit.util.util.NetHelpers;
 
 import java.net.InetSocketAddress;

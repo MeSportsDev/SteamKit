@@ -1,14 +1,26 @@
 package uk.co.thomasc.steamkit.steam3;
 
-import uk.co.thomasc.steamkit.base.*;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesBase.CMsgMulti;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientServerList;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientSessionToken;
-import uk.co.thomasc.steamkit.base.generated.enums.EMsg;
-import uk.co.thomasc.steamkit.base.generated.enums.EResult;
-import uk.co.thomasc.steamkit.base.generated.enums.EServerType;
-import uk.co.thomasc.steamkit.base.generated.enums.EUniverse;
-import uk.co.thomasc.steamkit.networking.steam3.*;
+import com.amelic.steamprotobuf.generated.SteammessagesBase.CMsgMulti;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver.CMsgClientServerList;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver.CMsgClientSessionToken;
+import com.amelic.steamprotobuf.generated.enums.EMsg;
+import com.amelic.steamprotobuf.generated.enums.EResult;
+import com.amelic.steamprotobuf.generated.enums.EServerType;
+import com.amelic.steamprotobuf.generated.enums.EUniverse;
+import uk.co.thomasc.steamkit.base.ClientMsgProtobuf;
+import uk.co.thomasc.steamkit.base.IClientMsg;
+import uk.co.thomasc.steamkit.base.IPacketMsg;
+import uk.co.thomasc.steamkit.base.PacketClientMsg;
+import uk.co.thomasc.steamkit.base.PacketClientMsgProtobuf;
+import uk.co.thomasc.steamkit.base.PacketMsg;
+import uk.co.thomasc.steamkit.networking.steam3.Connection;
+import uk.co.thomasc.steamkit.networking.steam3.DisconnectedEventArgs;
+import uk.co.thomasc.steamkit.networking.steam3.EnvelopeEncryptedConnection;
+import uk.co.thomasc.steamkit.networking.steam3.NetMsgEventArgs;
+import uk.co.thomasc.steamkit.networking.steam3.ProtocolType;
+import uk.co.thomasc.steamkit.networking.steam3.TcpConnection;
+import uk.co.thomasc.steamkit.networking.steam3.UdpConnection;
+import uk.co.thomasc.steamkit.networking.steam3.WebSocketConnection;
 import uk.co.thomasc.steamkit.steam3.discovery.ServerInfo;
 import uk.co.thomasc.steamkit.steam3.discovery.ServerQuality;
 import uk.co.thomasc.steamkit.steam3.discovery.ServerRecord;
@@ -31,14 +43,22 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.EnumSet;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadFactory;
 import java.util.zip.GZIPInputStream;
 
-import static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientCMList;
-import static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.*;
+import static com.amelic.steamprotobuf.generated.SteammessagesClientserver.CMsgClientCMList;
+import static com.amelic.steamprotobuf.generated.SteammessagesClientserverLogin.CMsgClientHeartBeat;
+import static com.amelic.steamprotobuf.generated.SteammessagesClientserverLogin.CMsgClientLoggedOff;
+import static com.amelic.steamprotobuf.generated.SteammessagesClientserverLogin.CMsgClientLogonResponse;
 
 /**
  * This base client handles the underlying connection to a CM server. This class
@@ -218,13 +238,13 @@ public abstract class CMClient {
         // on the network thread, and that will lead to a disconnect callback
         // down the line
         if (connection != null) {
-            THREAD_POOL.execute(() -> {
+           // THREAD_POOL.execute(() -> {
                 try {
                     connection.send(msg.serialize());
                 } catch (Exception e) {
                     DebugLog.printStackTrace("CMClient", e);
                 }
-            });
+           // });
         }
     }
 

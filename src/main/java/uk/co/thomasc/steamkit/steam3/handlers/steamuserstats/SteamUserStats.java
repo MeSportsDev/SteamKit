@@ -1,17 +1,17 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamuserstats;
 
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver.CMsgClientLBSFindOrCreateLB;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver.CMsgClientLBSFindOrCreateLBResponse;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver.CMsgClientLBSGetLBEntries;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver.CMsgClientLBSGetLBEntriesResponse;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver2.CMsgDPGetNumberOfCurrentPlayers;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver2.CMsgDPGetNumberOfCurrentPlayersResponse;
+import com.amelic.steamprotobuf.generated.enums.ELeaderboardDataRequest;
+import com.amelic.steamprotobuf.generated.enums.ELeaderboardDisplayType;
+import com.amelic.steamprotobuf.generated.enums.ELeaderboardSortMethod;
+import com.amelic.steamprotobuf.generated.enums.EMsg;
 import uk.co.thomasc.steamkit.base.ClientMsgProtobuf;
 import uk.co.thomasc.steamkit.base.IPacketMsg;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientLBSFindOrCreateLB;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientLBSFindOrCreateLBResponse;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientLBSGetLBEntries;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientLBSGetLBEntriesResponse;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgDPGetNumberOfCurrentPlayers;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgDPGetNumberOfCurrentPlayersResponse;
-import uk.co.thomasc.steamkit.base.generated.enums.ELeaderboardDataRequest;
-import uk.co.thomasc.steamkit.base.generated.enums.ELeaderboardDisplayType;
-import uk.co.thomasc.steamkit.base.generated.enums.ELeaderboardSortMethod;
-import uk.co.thomasc.steamkit.base.generated.enums.EMsg;
 import uk.co.thomasc.steamkit.steam3.handlers.ClientMsgHandler;
 import uk.co.thomasc.steamkit.steam3.handlers.steamuserstats.callbacks.FindOrCreateLeaderboardCallback;
 import uk.co.thomasc.steamkit.steam3.handlers.steamuserstats.callbacks.LeaderboardEntriesCallback;

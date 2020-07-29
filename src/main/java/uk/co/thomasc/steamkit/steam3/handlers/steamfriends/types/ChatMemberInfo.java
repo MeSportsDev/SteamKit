@@ -1,7 +1,7 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamfriends.types;
 
-import uk.co.thomasc.steamkit.base.generated.enums.EChatPermission;
-import uk.co.thomasc.steamkit.base.generated.enums.EClanPermission;
+import com.amelic.steamprotobuf.generated.enums.EChatPermission;
+import com.amelic.steamprotobuf.generated.enums.EClanPermission;
 import uk.co.thomasc.steamkit.types.KeyValue;
 import uk.co.thomasc.steamkit.types.MessageObject;
 import uk.co.thomasc.steamkit.types.SteamID;

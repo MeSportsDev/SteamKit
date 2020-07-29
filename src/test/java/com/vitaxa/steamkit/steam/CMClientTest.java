@@ -1,20 +1,26 @@
 package com.vitaxa.steamkit.steam;
 
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver.CMsgClientServerList;
+import com.amelic.steamprotobuf.generated.enums.EMsg;
+import com.amelic.steamprotobuf.generated.enums.EServerType;
 import com.vitaxa.steamkit.TestBase;
 import org.junit.Test;
-import uk.co.thomasc.steamkit.base.*;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientServerList;
-import uk.co.thomasc.steamkit.base.generated.enums.EMsg;
-import uk.co.thomasc.steamkit.base.generated.enums.EServerType;
-import uk.co.thomasc.steamkit.base.generated.internal.MsgHdr;
-import uk.co.thomasc.steamkit.base.generated.internal.MsgHdrProtoBuf;
+import uk.co.thomasc.steamkit.base.ClientMsgProtobuf;
+import uk.co.thomasc.steamkit.base.IPacketMsg;
+import uk.co.thomasc.steamkit.base.ISteamSerializableHeader;
+import uk.co.thomasc.steamkit.base.PacketClientMsgProtobuf;
+import uk.co.thomasc.steamkit.base.PacketMsg;
+import uk.co.thomasc.steamkit.base.internal.MsgHdr;
+import uk.co.thomasc.steamkit.base.internal.MsgHdrProtoBuf;
 import uk.co.thomasc.steamkit.steam3.CMClient;
 import uk.co.thomasc.steamkit.util.stream.BinaryWriter;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
 public class CMClientTest extends TestBase {
     @Test

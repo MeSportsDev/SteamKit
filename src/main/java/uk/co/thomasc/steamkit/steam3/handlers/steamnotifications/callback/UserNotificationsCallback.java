@@ -1,6 +1,6 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamnotifications.callback;
 
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgClientUserNotifications;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver2.CMsgClientUserNotifications;
 import uk.co.thomasc.steamkit.steam3.handlers.steamnotifications.Notification;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
 

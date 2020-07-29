@@ -1,8 +1,8 @@
 package uk.co.thomasc.steamkit.steam3.steamclient;
 
+import com.amelic.steamprotobuf.generated.enums.EMsg;
 import uk.co.thomasc.steamkit.base.ClientMsgProtobuf;
 import uk.co.thomasc.steamkit.base.IPacketMsg;
-import uk.co.thomasc.steamkit.base.generated.enums.EMsg;
 import uk.co.thomasc.steamkit.steam3.CMClient;
 import uk.co.thomasc.steamkit.steam3.handlers.ClientMsgHandler;
 import uk.co.thomasc.steamkit.steam3.handlers.steamapps.SteamApps;
@@ -29,12 +29,18 @@ import uk.co.thomasc.steamkit.types.AsyncJob;
 import uk.co.thomasc.steamkit.types.JobID;
 import uk.co.thomasc.steamkit.util.logging.DebugLog;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Queue;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.function.Consumer;
 
-import static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientCMList;
-import static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientServerList;
+import static com.amelic.steamprotobuf.generated.SteammessagesClientserver.CMsgClientCMList;
+import static com.amelic.steamprotobuf.generated.SteammessagesClientserver.CMsgClientServerList;
 
 /**
  * Represents a single client that connects to the Steam3 network.

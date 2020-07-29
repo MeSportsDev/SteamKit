@@ -1,9 +1,9 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamgamecoordinator.callbacks;
 
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver2.CMsgGCClient;
 import uk.co.thomasc.steamkit.base.IPacketGCMsg;
 import uk.co.thomasc.steamkit.base.PacketClientGCMsg;
 import uk.co.thomasc.steamkit.base.PacketClientGCMsgProtobuf;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgGCClient;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
 import uk.co.thomasc.steamkit.util.util.MsgUtil;
 

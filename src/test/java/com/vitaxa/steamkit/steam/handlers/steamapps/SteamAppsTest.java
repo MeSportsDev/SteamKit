@@ -1,30 +1,45 @@
 package com.vitaxa.steamkit.steam.handlers.steamapps;
 
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver.CMsgClientGetAppOwnershipTicket;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver.CMsgClientPICSAccessTokenRequest;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver.CMsgClientPICSChangesSinceRequest;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver.CMsgClientPICSProductInfoRequest;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver2.CMsgClientCheckAppBetaPassword;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver2.CMsgClientGetCDNAuthToken;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver2.CMsgClientGetDepotDecryptionKey;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver2.CMsgClientRequestFreeLicense;
+import com.amelic.steamprotobuf.generated.enums.EMsg;
+import com.amelic.steamprotobuf.generated.enums.EResult;
 import com.vitaxa.steamkit.steam.handlers.HandlerTestBase;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.junit.MockitoJUnitRunner;
 import uk.co.thomasc.steamkit.base.ClientMsgProtobuf;
 import uk.co.thomasc.steamkit.base.IPacketMsg;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientGetAppOwnershipTicket;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientPICSAccessTokenRequest;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientPICSChangesSinceRequest;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientPICSProductInfoRequest;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgClientCheckAppBetaPassword;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgClientGetCDNAuthToken;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgClientGetDepotDecryptionKey;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgClientRequestFreeLicense;
-import uk.co.thomasc.steamkit.base.generated.enums.EMsg;
-import uk.co.thomasc.steamkit.base.generated.enums.EResult;
 import uk.co.thomasc.steamkit.steam3.handlers.steamapps.SteamApps;
-import uk.co.thomasc.steamkit.steam3.handlers.steamapps.callbacks.*;
+import uk.co.thomasc.steamkit.steam3.handlers.steamapps.callbacks.AppOwnershipTicketCallback;
+import uk.co.thomasc.steamkit.steam3.handlers.steamapps.callbacks.CDNAuthTokenCallback;
+import uk.co.thomasc.steamkit.steam3.handlers.steamapps.callbacks.CheckAppBetaPasswordCallback;
+import uk.co.thomasc.steamkit.steam3.handlers.steamapps.callbacks.DepotKeyCallback;
+import uk.co.thomasc.steamkit.steam3.handlers.steamapps.callbacks.FreeLicenseCallback;
+import uk.co.thomasc.steamkit.steam3.handlers.steamapps.callbacks.GameConnectTokensCallback;
+import uk.co.thomasc.steamkit.steam3.handlers.steamapps.callbacks.GuestPassListCallback;
+import uk.co.thomasc.steamkit.steam3.handlers.steamapps.callbacks.LicenseListCallback;
+import uk.co.thomasc.steamkit.steam3.handlers.steamapps.callbacks.PICSChangesCallback;
+import uk.co.thomasc.steamkit.steam3.handlers.steamapps.callbacks.PICSProductInfoCallback;
+import uk.co.thomasc.steamkit.steam3.handlers.steamapps.callbacks.PICSTokensCallback;
+import uk.co.thomasc.steamkit.steam3.handlers.steamapps.callbacks.VACStatusCallback;
 import uk.co.thomasc.steamkit.steam3.handlers.steamapps.types.PICSRequest;
 import uk.co.thomasc.steamkit.types.JobID;
 
 import java.util.Date;
 import java.util.LinkedList;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 @RunWith(MockitoJUnitRunner.Silent.class)
 public class SteamAppsTest extends HandlerTestBase<SteamApps> {

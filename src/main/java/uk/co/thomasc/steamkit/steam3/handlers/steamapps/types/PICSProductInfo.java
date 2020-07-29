@@ -1,6 +1,6 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamapps.types;
 
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientPICSProductInfoResponse;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver.CMsgClientPICSProductInfoResponse;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
 import uk.co.thomasc.steamkit.types.KeyValue;
 import uk.co.thomasc.steamkit.util.StringHelper;

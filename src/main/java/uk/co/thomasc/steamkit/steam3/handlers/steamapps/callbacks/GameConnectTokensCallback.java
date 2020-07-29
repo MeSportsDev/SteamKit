@@ -1,7 +1,7 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamapps.callbacks;
 
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver.CMsgClientGameConnectTokens;
 import com.google.protobuf.ByteString;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientGameConnectTokens;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
 
 import java.util.ArrayList;

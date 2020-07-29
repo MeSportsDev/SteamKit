@@ -1,9 +1,16 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamworkshop;
 
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver2.CMsgCREEnumeratePublishedFiles;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver2.CMsgCREEnumeratePublishedFilesResponse;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver2.CMsgClientUCMEnumeratePublishedFilesByUserAction;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver2.CMsgClientUCMEnumeratePublishedFilesByUserActionResponse;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver2.CMsgClientUCMEnumerateUserPublishedFiles;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver2.CMsgClientUCMEnumerateUserPublishedFilesResponse;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver2.CMsgClientUCMEnumerateUserSubscribedFiles;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver2.CMsgClientUCMEnumerateUserSubscribedFilesResponse;
+import com.amelic.steamprotobuf.generated.enums.EMsg;
 import uk.co.thomasc.steamkit.base.ClientMsgProtobuf;
 import uk.co.thomasc.steamkit.base.IPacketMsg;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.*;
-import uk.co.thomasc.steamkit.base.generated.enums.EMsg;
 import uk.co.thomasc.steamkit.steam3.handlers.ClientMsgHandler;
 import uk.co.thomasc.steamkit.steam3.handlers.steamworkshop.callbacks.PublishedFilesCallback;
 import uk.co.thomasc.steamkit.steam3.handlers.steamworkshop.callbacks.UserActionPublishedFilesCallback;

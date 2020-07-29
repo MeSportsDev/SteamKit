@@ -1,7 +1,7 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamuserstats.callbacks;
 
-import uk.co.thomasc.steamkit.base.generated.enums.ELeaderboardDataRequest;
-import uk.co.thomasc.steamkit.base.generated.enums.EResult;
+import com.amelic.steamprotobuf.generated.enums.ELeaderboardDataRequest;
+import com.amelic.steamprotobuf.generated.enums.EResult;
 import uk.co.thomasc.steamkit.steam3.handlers.steamuserstats.LeaderboardEntry;
 import uk.co.thomasc.steamkit.steam3.handlers.steamuserstats.SteamUserStats;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientLBSGetLBEntriesResponse;
+import static com.amelic.steamprotobuf.generated.SteammessagesClientserver.CMsgClientLBSGetLBEntriesResponse;
 
 /**
  * This callback is fired in response to {@link SteamUserStats#getLeaderboardEntries(int, int, int, int, ELeaderboardDataRequest)}.

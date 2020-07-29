@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverFriends.CMsgClientPlayerNicknameList;
+import static com.amelic.steamprotobuf.generated.SteammessagesClientserverFriends.CMsgClientPlayerNicknameList;
 
 /**
  * This callback is fired when the client receives a list of friend nicknames.

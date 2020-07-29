@@ -2,12 +2,12 @@ package uk.co.thomasc.steamkit.steam3.handlers.steamunifiedmessages;
 
 import com.google.protobuf.GeneratedMessageV3;
 
-import static uk.co.thomasc.steamkit.base.generated.unified.SteamMsgCredentials.CCredentials_GetSteamGuardDetails_Request;
-import static uk.co.thomasc.steamkit.base.generated.unified.SteamMsgCredentials.CCredentials_GetSteamGuardDetails_Response;
-import static uk.co.thomasc.steamkit.base.generated.unified.SteamMsgEcon.CEcon_GetTradeOfferAccessToken_Request;
-import static uk.co.thomasc.steamkit.base.generated.unified.SteamMsgEcon.CEcon_GetTradeOfferAccessToken_Response;
-import static uk.co.thomasc.steamkit.base.generated.unified.SteamMsgPublishedFile.CPublishedFile_GetDetails_Request;
-import static uk.co.thomasc.steamkit.base.generated.unified.SteamMsgPublishedFile.CPublishedFile_GetDetails_Response;
+import static com.amelic.steamprotobuf.generated.unified.SteamMsgCredentials.CCredentials_GetSteamGuardDetails_Request;
+import static com.amelic.steamprotobuf.generated.unified.SteamMsgCredentials.CCredentials_GetSteamGuardDetails_Response;
+import static com.amelic.steamprotobuf.generated.unified.SteamMsgEcon.CEcon_GetTradeOfferAccessToken_Request;
+import static com.amelic.steamprotobuf.generated.unified.SteamMsgEcon.CEcon_GetTradeOfferAccessToken_Response;
+import static com.amelic.steamprotobuf.generated.unified.SteamMsgPublishedFile.CPublishedFile_GetDetails_Request;
+import static com.amelic.steamprotobuf.generated.unified.SteamMsgPublishedFile.CPublishedFile_GetDetails_Response;
 
 public enum UnifiedProtobufMethod {
 

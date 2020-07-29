@@ -1,6 +1,6 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamfriends.callback;
 
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverFriends.CMsgClientPersonaState;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserverFriends.CMsgClientPersonaState;
 import uk.co.thomasc.steamkit.steam3.handlers.steamfriends.types.PersonaState;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
 

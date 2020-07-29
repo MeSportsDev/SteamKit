@@ -1,6 +1,6 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamgameserver.callbacks;
 
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgGSStatusReply;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver.CMsgGSStatusReply;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
 
 /**

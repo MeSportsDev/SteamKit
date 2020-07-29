@@ -1,24 +1,40 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamuser;
 
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver.CMsgClientSessionToken;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver.CMsgClientWalletInfoUpdate;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver2.CMsgClientUpdateMachineAuth;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver2.CMsgClientUpdateMachineAuthResponse;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserverLogin.CMsgClientAccountInfo;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserverLogin.CMsgClientLogOff;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserverLogin.CMsgClientLoggedOff;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserverLogin.CMsgClientLogon;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserverLogin.CMsgClientLogonResponse;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKey;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse;
+import com.amelic.steamprotobuf.generated.enums.EAccountType;
+import com.amelic.steamprotobuf.generated.enums.EMsg;
+import com.amelic.steamprotobuf.generated.enums.EResult;
 import com.google.protobuf.ByteString;
 import uk.co.thomasc.steamkit.base.ClientMsg;
 import uk.co.thomasc.steamkit.base.ClientMsgProtobuf;
 import uk.co.thomasc.steamkit.base.IPacketMsg;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientSessionToken;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientWalletInfoUpdate;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgClientUpdateMachineAuth;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgClientUpdateMachineAuthResponse;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.*;
-import uk.co.thomasc.steamkit.base.generated.enums.EAccountType;
-import uk.co.thomasc.steamkit.base.generated.enums.EMsg;
-import uk.co.thomasc.steamkit.base.generated.enums.EResult;
-import uk.co.thomasc.steamkit.base.generated.internal.MsgClientLogOnResponse;
-import uk.co.thomasc.steamkit.base.generated.internal.MsgClientLoggedOff;
-import uk.co.thomasc.steamkit.base.generated.internal.MsgClientLogon;
-import uk.co.thomasc.steamkit.base.generated.internal.MsgClientMarketingMessageUpdate2;
+import uk.co.thomasc.steamkit.base.internal.MsgClientLogOnResponse;
+import uk.co.thomasc.steamkit.base.internal.MsgClientLoggedOff;
+import uk.co.thomasc.steamkit.base.internal.MsgClientLogon;
+import uk.co.thomasc.steamkit.base.internal.MsgClientMarketingMessageUpdate2;
 import uk.co.thomasc.steamkit.steam3.handlers.ClientMsgHandler;
 import uk.co.thomasc.steamkit.steam3.handlers.steamapps.callbacks.AccountLimitCallback;
-import uk.co.thomasc.steamkit.steam3.handlers.steamuser.callbacks.*;
+import uk.co.thomasc.steamkit.steam3.handlers.steamuser.callbacks.AccountInfoCallback;
+import uk.co.thomasc.steamkit.steam3.handlers.steamuser.callbacks.LoggedOffCallback;
+import uk.co.thomasc.steamkit.steam3.handlers.steamuser.callbacks.LoggedOnCallback;
+import uk.co.thomasc.steamkit.steam3.handlers.steamuser.callbacks.LoginKeyCallback;
+import uk.co.thomasc.steamkit.steam3.handlers.steamuser.callbacks.MarketingMessageCallback;
+import uk.co.thomasc.steamkit.steam3.handlers.steamuser.callbacks.SessionTokenCallback;
+import uk.co.thomasc.steamkit.steam3.handlers.steamuser.callbacks.UpdateMachineAuthCallback;
+import uk.co.thomasc.steamkit.steam3.handlers.steamuser.callbacks.WalletInfoCallback;
+import uk.co.thomasc.steamkit.steam3.handlers.steamuser.callbacks.WebAPIUserNonceCallback;
 import uk.co.thomasc.steamkit.steam3.handlers.steamuser.types.AnonymousLogOnDetails;
 import uk.co.thomasc.steamkit.steam3.handlers.steamuser.types.LogOnDetails;
 import uk.co.thomasc.steamkit.steam3.handlers.steamuser.types.MachineAuthDetails;
@@ -36,7 +52,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Consumer;
 
-import static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientIsLimitedAccount;
+import static com.amelic.steamprotobuf.generated.SteammessagesClientserver.CMsgClientIsLimitedAccount;
 
 /**
  * This handler handles all user log on/log off related actions and callbacks.

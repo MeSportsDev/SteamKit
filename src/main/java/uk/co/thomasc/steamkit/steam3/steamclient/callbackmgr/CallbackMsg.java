@@ -2,7 +2,7 @@ package uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr;
 
 import uk.co.thomasc.steamkit.types.JobID;
 
-public class CallbackMsg implements ICallbackMsg {
+public class CallbackMsg implements ICallbackMsg<CallbackMsg> {
 
     private JobID jobID = JobID.INVALID;
 
@@ -12,7 +12,8 @@ public class CallbackMsg implements ICallbackMsg {
     }
 
     @Override
-    public void setJobID(JobID jobID) {
+    public CallbackMsg setJobID(JobID jobID) {
         this.jobID = jobID;
+        return this;
     }
 }

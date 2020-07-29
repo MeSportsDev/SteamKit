@@ -1,6 +1,6 @@
 package uk.co.thomasc.steamkit.steam3.steamclient.callbacks;
 
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver;
 import uk.co.thomasc.steamkit.steam3.discovery.ServerRecord;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
 import uk.co.thomasc.steamkit.util.util.NetHelpers;

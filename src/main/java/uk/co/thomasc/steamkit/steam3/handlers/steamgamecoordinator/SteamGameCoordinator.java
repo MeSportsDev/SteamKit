@@ -1,11 +1,11 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamgamecoordinator;
 
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver2.CMsgGCClient;
+import com.amelic.steamprotobuf.generated.enums.EMsg;
 import com.google.protobuf.ByteString;
 import uk.co.thomasc.steamkit.base.ClientMsgProtobuf;
 import uk.co.thomasc.steamkit.base.IClientGCMsg;
 import uk.co.thomasc.steamkit.base.IPacketMsg;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgGCClient;
-import uk.co.thomasc.steamkit.base.generated.enums.EMsg;
 import uk.co.thomasc.steamkit.steam3.handlers.ClientMsgHandler;
 import uk.co.thomasc.steamkit.steam3.handlers.steamgamecoordinator.callbacks.MessageCallback;
 import uk.co.thomasc.steamkit.util.util.MsgUtil;

@@ -1,9 +1,9 @@
 package uk.co.thomasc.steamkit.base;
 
+import com.amelic.steamprotobuf.generated.SteammessagesBase.CMsgProtoBufHeader;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.GeneratedMessageV3;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesBase.CMsgProtoBufHeader;
-import uk.co.thomasc.steamkit.base.generated.internal.MsgGCHdrProtoBuf;
+import uk.co.thomasc.steamkit.base.internal.MsgGCHdrProtoBuf;
 import uk.co.thomasc.steamkit.types.JobID;
 import uk.co.thomasc.steamkit.util.logging.DebugLog;
 import uk.co.thomasc.steamkit.util.stream.BinaryReader;

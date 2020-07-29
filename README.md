@@ -1,6 +1,4 @@
 # JaSteamKit
-Java port of SteamKit2
+Fork of JsSteamKit by vitaxa
 
-Based on 
-- https://github.com/SteamRE/SteamKit
-- https://github.com/Longi94/JavaSteam
+[Original repository](https://github.com/vitaxa/JaSteamKit)

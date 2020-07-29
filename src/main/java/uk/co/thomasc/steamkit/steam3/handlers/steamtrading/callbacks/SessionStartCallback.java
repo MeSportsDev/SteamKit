@@ -1,6 +1,6 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamtrading.callbacks;
 
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgTrading_StartSession;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver2.CMsgTrading_StartSession;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
 import uk.co.thomasc.steamkit.types.SteamID;
 

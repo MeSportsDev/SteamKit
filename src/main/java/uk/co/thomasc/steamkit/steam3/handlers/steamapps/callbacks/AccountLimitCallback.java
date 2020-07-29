@@ -2,7 +2,7 @@ package uk.co.thomasc.steamkit.steam3.handlers.steamapps.callbacks;
 
 import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
 
-import static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientIsLimitedAccount;
+import static com.amelic.steamprotobuf.generated.SteammessagesClientserver.CMsgClientIsLimitedAccount;
 
 public class AccountLimitCallback extends CallbackMsg {
 

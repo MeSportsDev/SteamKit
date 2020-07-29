@@ -1,7 +1,7 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamtrading.callbacks;
 
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgTrading_InitiateTradeResponse;
-import uk.co.thomasc.steamkit.base.generated.enums.EEconTradeResponse;
+import com.amelic.steamprotobuf.generated.SteammessagesClientserver2.CMsgTrading_InitiateTradeResponse;
+import com.amelic.steamprotobuf.generated.enums.EEconTradeResponse;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
 import uk.co.thomasc.steamkit.types.SteamID;
 
